@@ -68,7 +68,7 @@ function replacer(char, options) {
   const cp = char.codePointAt(0);
 
   if (options.skipRanges.length > 0) {
-    for (var i = 0; i < options.skipRanges.length; ++i) {
+    for (let i = 0; i < options.skipRanges.length; ++i) {
       if (options.skipRanges[i][0] <= cp && cp <= options.skipRanges[i][1]) {
         return char;
       }
