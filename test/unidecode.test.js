@@ -8,28 +8,27 @@
 
 /* global describe, it */
 
-var assert = require('assert');
-var unidecode = require('../unidecode');
+const assert = require('assert');
+const unidecode = require('../unidecode');
 
 describe('Purity tests', function() {
-  var code;
-  var tests = [];
+  const tests = [];
 
-  for(code = 0; code <= 127; code++) {
+  for (let code = 0; code <= 127; code++) {
     tests.push(String.fromCharCode(code));
   }
 
   tests.forEach(function(test) {
     it(test.charCodeAt(0).toString(16) + ' ' + test, function() {
-      var exp = test;
-      var res = unidecode(exp);
+      const exp = test;
+      const res = unidecode(exp);
       assert.equal(res, exp);
     });
   });
 });
 
 describe('Basic string tests', function() {
-  var tests = [
+  const tests = [
     '',
     1/10,
     'I like pie.',
@@ -40,15 +39,15 @@ describe('Basic string tests', function() {
 
   tests.forEach(function(test) {
     it(test.toString(), function(){
-      var exp = test;
-      var res = unidecode(test.toString());
+      const exp = test;
+      const res = unidecode(test.toString());
       assert.equal(res, exp);
     });
   });
 });
 
 describe('Complex tests', function() {
-  var tests = [
+  const tests = [
     ['Æneid', 'AEneid'],
     ['étude', 'etude'],
     ['北亰', 'Bei Jing '], // Chinese
@@ -66,8 +65,8 @@ describe('Complex tests', function() {
 
   tests.forEach(function(test) {
     it(test[0] + ' --> ' + test[1], function(){
-      var exp = test[1];
-      var res = unidecode(test[0]);
+      const exp = test[1];
+      const res = unidecode(test[0]);
       assert.equal(res, exp);
     });
   });
@@ -91,7 +90,7 @@ describe('Smart spacing', function() {
   });
 
   it('should handle deferred smart spacing', function() {
-    var str = unidecode('Café 北京, 鞋 size 10½, 33⅓ RPM', { deferredSmartSpacing: true });
+    const str = unidecode('Café 北京, 鞋 size 10½, 33⅓ RPM', { deferredSmartSpacing: true });
     assert.ok(/[\x80\x81]/.test(str));
     assert.equal(unidecode.resolveSpacing(str), 'Cafe Bei Jing, Xie size 10 1/2, 33 1/3 RPM');
   });
