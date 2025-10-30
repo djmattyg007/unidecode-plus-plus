@@ -64,23 +64,23 @@ module.exports = function unidecode(inputStr, inputOptions) {
   }
 };
 
-function replacer(ch, options) {
-  var cp = ch.codePointAt(0);
+function replacer(char, options) {
+  const cp = char.codePointAt(0);
 
   if (options.skipRanges.length > 0) {
     for (var i = 0; i < options.skipRanges.length; ++i) {
       if (options.skipRanges[i][0] <= cp && cp <= options.skipRanges[i][1]) {
-        return ch;
+        return char;
       }
     }
   }
 
-  var high = cp >> 8;
-  var row = high + (high === 0 && options.german ? 0.5 : 0);
-  var low = cp & 0xFF;
-  var emDash = cp === 0x2014;
+  const high = cp >> 8;
+  const row = high + (high === 0 && options.german ? 0.5 : 0);
+  const low = cp & 0xFF;
+  const emDash = cp === 0x2014;
   // This doesn't cover all emoji, just those currently defined.
-  var emoji = (high === 0x1F4 || high === 0x1F6 || high === 0x1F9);
+  const emoji = (high === 0x1F4 || high === 0x1F6 || high === 0x1F9);
 
   if (0x18 < high && high < 0x1E || 0xD7 < high && high < 0xF9) {
     return ''; // Isolated high or low surrogate
@@ -94,7 +94,7 @@ function replacer(ch, options) {
 
       // I'm not sure why, but a fair number of the original data tables don't contain a full 256 items.
       if (dataCache[row].length < 256) {
-        var start = dataCache[row].length;
+        const start = dataCache[row].length;
         dataCache[row].length = 256;
         dataCache[row].fill('_', start);
       }
@@ -103,16 +103,16 @@ function replacer(ch, options) {
     }
   }
 
-  ch = dataCache[row][low];
+  const newChar = dataCache[row][low];
 
   if (options.smartSpacing && emDash) {
     return '\x80--\x80';
-  } if (!options.smartSpacing || ch === '[?]' || ch === '_' || /^\w+$/.test(ch)) {
-    return ch;
+  } if (!options.smartSpacing || newChar === '[?]' || newChar === '_' || /^\w+$/.test(newChar)) {
+    return newChar;
   } else if (emoji) {
-    return '\x80\x81' + ch + '\x81\x80';
+    return '\x80\x81' + newChar + '\x81\x80';
   } else {
-    return '\x80' + ch.trim() + '\x80';
+    return '\x80' + newChar.trim() + '\x80';
   }
 }
 
