@@ -1,9 +1,5 @@
-/.idea
-/coverage
-/scripts
-/test
-.travis.yml
-unidecode-old.js
+/.idea/
+/test/
 package-lock.json
 .npmrc
 .jshintrc
