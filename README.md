@@ -6,31 +6,33 @@
 [![npm downloads](https://img.shields.io/npm/dm/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
 
-__Unidecode-plus__ is an extended version of __unidecode__, which in turn is a  __JavaScript port__ of the __perl module [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm)__.
+__Unidecode-plus-plus__ is an extended version of __unidecode__, which in turn is a  __JavaScript port__ of the __perl module [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm)__.
 
-__Unidecode-plus__ takes full-range Unicode text and tries to represent it using only US-ASCII characters (i.e., the universally
+__Unidecode-plus-plus__ takes full-range Unicode text and tries to represent it using only US-ASCII characters (i.e., the universally
 displayable characters between 0x00 and 0x7F). The representation is generally an attempt at transliteration &mdash;
 i.e., conveying, in Roman letters, the pronunciation expressed by the original text in some other writing system. Some transliterations go for matching the _shape_ of characters rather than their pronunciation. Various emoji are represented either as "ASCII art" or English text.
 
-__Unidecode-plus__ updates the original __unidecode__ in the following ways:
+__Unidecode-plus-plus__ updates on __unidecode-plus__ and __unidecode__ in the following ways:
+
 * Adds support beyond the Unicode Basic Multilingual Plane for transforming many emoji into ASCII-art equivalents.
 * Adds a "smart spacing" mode that improves the rendering of text such as "10½", so it comes out as "10 1/2" instead of "101/2"".
 * Adds a German mode to convert characters like "ö" into "oe" instead of "o".
 * Allows you to skip ranges of characters so that some non-ASCII characters remain untouched, while only other characters are transliterated. You can, for example, keep accented characters and Chinese characters while only transliterating emoji.
 * Fixes a bug that transliterated `Ý` to `U` instead of `Y`.
+* Improves option handling such that previous invocations do not accidentally poison future invocations.
 
 See [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm) for the original README file, including methodology and limitations.
 
-Note that all the files named 'x??.js' in `data` are originally derived directly from equivalent Perl files, distributed under the Perl license, not the BSD or MIT licenses. These files have been modified and supplemented for `unidecode-plus`.
+Note that all the files named 'x??.js' in `data` are originally derived directly from equivalent Perl files, distributed under the Perl license, not the BSD or MIT licenses. These files have been modified and supplemented for `unidecode-plus-plus`.
 
 ## Installation
 
-    $ npm install unidecode-plus
+    $ npm install unidecode-plus-plus
 
 ## Sample usage
 
     $ node
-    > const unidecode = require('unidecode-plus');
+    > const unidecode = require('unidecode-plus-plus');
     > unidecode("aéà)àçé");
     'aea)ace'
     > unidecode("に間違いがないか、再度確認してください。再読み込みしてください。");

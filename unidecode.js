@@ -1,5 +1,5 @@
 /**
- * Unidecode-plus takes full-range Unicode text and tries to represent it using only US-ASCII characters (i.e., the
+ * Unidecode-plus-plus takes full-range Unicode text and tries to represent it using only US-ASCII characters (i.e., the
  * universally displayable characters between 0x00 and 0x7F). The representation is generally an attempt at
  * transliteration -- i.e., conveying, in Roman letters, the pronunciation expressed by the text in some other writing
  * system. Some of the transliterations go for matching the _shape_ of characters rather than their pronunciation, such
@@ -14,6 +14,7 @@
  * emojis.
  *
  * @author Kerry Shetline
+ * @author Matthew Gamble
  *
  * Based on Francois-Guillaume Ribreau's unidecode, which in turn was based on a port of unidecode for Perl.
  */
