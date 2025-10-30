@@ -15,12 +15,11 @@
   "main": "./unidecode",
   "license": "MIT AND BSD-3-Clause AND Artistic-1.0-Perl",
   "scripts": {
-    "test": "mocha **/*.mocha.js",
-    "lint": "jshint *.js */*.js",
-    "speed-compare": "node test/speed-compare.js"
+    "test": "mocha **/*.test.js",
+    "lint": "jshint *.js */*.js"
   },
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 18"
   },
   "devDependencies": {
     "@types/node": "^12.0.10",

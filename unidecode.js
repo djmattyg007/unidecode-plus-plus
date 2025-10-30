@@ -20,8 +20,6 @@
 
 'use strict';
 
-require('./polyfills');
-
 var tr = {};
 var codepoints;
 

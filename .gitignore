@@ -1,20 +1,8 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
 *.gz
 .DS_Store
 
-pids
-logs
-results
+node_modules/
+*.log
 
-node_modules
-npm-debug.log
-
-/.idea
-/package-lock.json
+/.idea/
 /.npmrc

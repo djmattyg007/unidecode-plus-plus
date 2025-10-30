@@ -2,7 +2,6 @@
 
 [![NPM Stats](https://nodei.co/npm/unidecode-plus.png)](https://npmjs.org/package/unidecode-plus/)
 
-[![Build Status](https://travis-ci.com/kshetline/unidecode-plus.svg?branch=master)](https://travis-ci.com/kshetline/unidecode-plus)
 [![npm](https://img.shields.io/npm/v/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
 [![npm downloads](https://img.shields.io/npm/dm/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
