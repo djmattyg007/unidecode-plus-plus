@@ -6,7 +6,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/unidecode-plus.svg)](https://npmjs.org/package/unidecode-plus/)
 
-__Unidecode-plus__ is an extended version of __unidecode__, which in turn is a  __JavaScript port__ of the __perl module [Text::Unicode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm)__.
+__Unidecode-plus__ is an extended version of __unidecode__, which in turn is a  __JavaScript port__ of the __perl module [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm)__.
 
 __Unidecode-plus__ takes full-range Unicode text and tries to represent it using only US-ASCII characters (i.e., the universally
 displayable characters between 0x00 and 0x7F). The representation is generally an attempt at transliteration &mdash;
@@ -19,7 +19,7 @@ __Unidecode-plus__ updates the original __unidecode__ in the following ways:
 * Allows you to skip ranges of characters so that some non-ASCII characters remain untouched, while only other characters are transliterated. You can, for example, keep accented characters and Chinese characters while only transliterating emoji.
 * Fixes a bug that transliterated `Ý` to `U` instead of `Y`.
 
-See [Text::Unicode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm) for the original README file, including methodology and limitations.
+See [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm) for the original README file, including methodology and limitations.
 
 Note that all the files named 'x??.js' in `data` are originally derived directly from equivalent Perl files, distributed under the Perl license, not the BSD or MIT licenses. These files have been modified and supplemented for `unidecode-plus`.
 
